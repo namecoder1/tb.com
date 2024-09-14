@@ -23,12 +23,16 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiSanity } from "react-icons/si";
 import Skills from "@/components/Skills";
 import Tools from "@/components/Tools";
+import { POSTS_QUERY } from "@/sanity/lib/queries";
+import { client } from "@/sanity/lib/client";
+
+const options = { next: { revalidate: 60 } };
 
 const code = Source_Code_Pro({ subsets: ['latin'] })
 
 
-const HomePage = () => {
-
+const HomePage = async () => {
+	const posts = await client.fetch(POSTS_QUERY, {}, options);
 	const skills = [
 		{name: 'React', logo: 'FaReact' },
 		{name: 'Next', logo: 'RiNextjsLine' },
@@ -66,6 +70,19 @@ const HomePage = () => {
 		</section>
 		<Skills />
 		<Tools />
+		<div>
+			{posts.map((post) => {
+				return (
+					<div key={post._id} className='flex flex-col items-center my-10'>
+            <h2 className='text-xl font-semibold'>{post.title}</h2>
+            <p>{post.description}</p>
+            <Link href={`/blog/${post.slug.current}`}>
+							vai
+            </Link>
+          </div>
+				)
+			})}
+		</div>
 		</>
 	);
 };
