@@ -3,8 +3,8 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Montserrat } from 'next/font/google';
 
-const montserrat = Montserrat({ subsets: ['latin'] })
 
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 const MainLayout = ({ children }) => {
 	return (
