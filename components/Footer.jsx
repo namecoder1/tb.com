@@ -5,7 +5,7 @@ import logo from "@/assets/images/logo.png";
 const Footer = () => {
 	return (
 		<footer className='bg-gray-950 flex flex-col items-center justify-evenly py-8 gap-6'>
-			<Image src={logo} width={35} height={35} />
+			<Image src={logo} width={35} height={35} alt="Logo" />
 			<ul className='flex gap-8 items-center justify-center text-white'>
 				<li><Link href='/'>Home</Link></li>
 				<li><Link href='/projects'>Projects</Link></li>

@@ -8,7 +8,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 const MainLayout = ({ children }) => {
 	return (
-		<html>
+		<html lang='it'>
 			<head>
 				<link rel="icon" href="/favicon.ico" />
 				<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -17,7 +17,9 @@ const MainLayout = ({ children }) => {
 			</head>
 			<body className={montserrat.className}>
 				<Navbar />
-				{children}
+				<main className='mx-10 md:mx-32'>
+					{children}
+				</main>
 				<Footer />
 			</body>
 		</html>

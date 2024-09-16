@@ -9,22 +9,35 @@ export const postType = defineType({
   fields: [
     defineField({
       name: 'title',
+      title: 'Titolo',
       type: 'string',
     }),
     defineField({
       name: 'slug',
+      title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
       },
     }),
     defineField({
+      name: 'description',
+      title: 'Descrizione',
+      type: 'text',
+      description: 'Massimo 3.5 righe',
+      options: {
+        maxLength: 35,
+      }
+    }),
+    defineField({
       name: 'author',
+      title: 'Autore',
       type: 'reference',
       to: {type: 'author'},
     }),
     defineField({
       name: 'mainImage',
+      title: 'Immagine Principale',
       type: 'image',
       options: {
         hotspot: true,
@@ -33,21 +46,28 @@ export const postType = defineType({
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternative text',
+          title: 'Testo Alternativo',
+          validation: rule => rule.custom((value, context) => {
+            const parent = context?.parent;
+            return !value && parent?.asset?._ref ? 'Alt text is required' : true
+          }),
         }
       ]
     }),
     defineField({
       name: 'categories',
+      title: 'Categorie',
       type: 'array',
       of: [defineArrayMember({type: 'reference', to: {type: 'category'}})],
     }),
     defineField({
       name: 'publishedAt',
+      title: 'Data di Pubblicazione',
       type: 'datetime',
     }),
     defineField({
       name: 'body',
+      title: 'Testo',
       type: 'blockContent',
     }),
   ],

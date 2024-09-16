@@ -7,6 +7,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Divide as Hamburger } from "hamburger-react";
+import Clock from "./Clock";
 
 export const HamburgerMenu = () => {
 	const routes = [
@@ -15,21 +16,6 @@ export const HamburgerMenu = () => {
     { title: "Projects", href: "/projects" },
     { title: "Blog", href: "/blog" },
 	];
-  const getTime = () => {
-		const options = {
-			timeZone: 'Europe/Rome',
-			hour: '2-digit',
-			minute: '2-digit',
-			hour12: false
-		};
-	
-		const formatter = new Intl.DateTimeFormat('it-IT', options);
-		const currentTime = formatter.format(new Date());
-	
-		return currentTime;
-	};
-	
-	const time = getTime();
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -45,22 +31,9 @@ export const HamburgerMenu = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed z-10 left-3/3 w-1/2 right-0 top-[4.5rem] p-5 pt-0 bg-transparent 950 border-b border-b-white/20"
+            className="fixed z-10 left-3/3 w-2/5 sm:w-1/3 right-0 top-[4.5rem] p-5 pt-0 bg-transparent 950 border-b border-b-white/20"
           >
             <div className='flex flex-col justify-center items-center gap-y-2 mb-2 w-full'>
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 20,
-                    delay: 0.1 ,
-                  }}
-                  className="flex w-full bg-gray-100 border-[1px] border-slate-400 rounded-xl py-2 px-4"
-                  >
-                    <p className='font-normal'>Pesaro: <span className='font-medium ml-1'>{time}</span></p>
-                  </motion.div>
                   <motion.div
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -70,9 +43,9 @@ export const HamburgerMenu = () => {
                     damping: 20,
                     delay: 0.1 ,
                   }}
-                  className='w-full'
+                  className='h-full w-full border-[1px] bg-primary border-slate-400 text-white rounded-xl py-2 px-4'
                   >
-                  <Button className='h-full w-full border-[1px] border-slate-400 bg-gray-100 rounded-xl py-2 px-4' size='xs' variant='outline' ><Link href='/contact'>Contact</Link></Button>
+                  <Link href='/contact'  size='lg' >Contact</Link>
                 </motion.div>
             </div>
             <ul className="grid gap-2">
@@ -88,12 +61,12 @@ export const HamburgerMenu = () => {
                       delay: 0.1 + idx / 10,
                     }}
                     key={route.title}
-                    className="w-full p-[0.06rem] rounded-xl bg-slate-400"
+                    className="w-full p-[0.06rem] rounded-xl bg-primary/80"
                   >
                     <Link
                       onClick={() => setOpen((prev) => !prev)}
                       className={
-                        "flex text-black items-center justify-between w-full px-5 py-2 rounded-xl bg-gray-100"
+                        "flex text-white items-center justify-between w-full px-5 py-2 rounded-xl bg-primary"
                       }
                       href={route.href}
                     >

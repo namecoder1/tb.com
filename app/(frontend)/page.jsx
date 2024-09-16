@@ -13,26 +13,12 @@ import { MdWorkOutline } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { PiReadCvLogoDuotone } from "react-icons/pi";
 import cardImage from "@/assets/images/profile.jpg";
-import { Source_Code_Pro } from 'next/font/google'
 import profile from '@/assets/images/profile.jpg';
-
-import { SiAstro } from "react-icons/si";
-import { RiNextjsLine } from "react-icons/ri";
-import { FaReact } from "react-icons/fa6";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiSanity } from "react-icons/si";
 import Skills from "@/components/Skills";
 import Tools from "@/components/Tools";
-import { POSTS_QUERY } from "@/sanity/lib/queries";
-import { client } from "@/sanity/lib/client";
-
-const options = { next: { revalidate: 60 } };
-
-const code = Source_Code_Pro({ subsets: ['latin'] })
-
+import LatestPosts from "@/components/LatestPosts";
 
 const HomePage = async () => {
-	const posts = await client.fetch(POSTS_QUERY, {}, options);
 	const skills = [
 		{name: 'React', logo: 'FaReact' },
 		{name: 'Next', logo: 'RiNextjsLine' },
@@ -43,10 +29,10 @@ const HomePage = async () => {
 
 	return (
 		<>
-		<section className='flex flex-col md:flex-row items-center justify-center space-x-10 mt-16'>
+		<section className='flex flex-col md:flex-row items-center justify-center md:space-x-10 mt-20 mb-32'>
 			<Card className='text-black w-fit p-2 my-10 '>
 				<CardHeader className='flex flex-col items-center'>
-					<Image src={cardImage} width={150} height={150} className='rounded-full' />
+					<Image src={cardImage} width={100} height={100} alt="Tobia Bartolomei's Image" className='rounded-full w-auto h-auto' />
 					<h1 className='text-xl font-semibold'>Tobia Bartolomei</h1>
 					<h2 className='text-sm'>Junior Frontend Web Developer</h2>
 					<Link className='mt-2' target='_blank' href="https://wakatime.com/@018edc23-7885-44d3-8b1a-efd38be8a6f6"><img src="https://wakatime.com/badge/user/018edc23-7885-44d3-8b1a-efd38be8a6f6.svg" alt="Total time coded since Apr 14 2024" /></Link>
@@ -64,25 +50,13 @@ const HomePage = async () => {
 				</CardFooter>
 			</Card>
 			<div className='col-span-2 flex flex-col items-center justify-center gap-10'>
-					<h1 className=' text-5xl max-w-sm'>Ciao sono <span className='text-yellow-500 font-semibold'>Tobia</span>, Junior Frontend Web Developer</h1>
+					<h1 className=' text-5xl max-w-lg'>Ciao sono <span className='text-yellow-500 font-semibold'>Tobia</span>, Junior Frontend Web Developer</h1>
 					<p className='max-w-lg'>Mi piace creare interfacce intuitive e moderne, adoro il design minimal e pulito, mi piace scoprire nuovi tool e personalizzare qualsiasi cosa.</p>
 			</div>
 		</section>
 		<Skills />
 		<Tools />
-		<div>
-			{posts.map((post) => {
-				return (
-					<div key={post._id} className='flex flex-col items-center my-10'>
-            <h2 className='text-xl font-semibold'>{post.title}</h2>
-            <p>{post.description}</p>
-            <Link href={`/blog/${post.slug.current}`}>
-							vai
-            </Link>
-          </div>
-				)
-			})}
-		</div>
+		<LatestPosts />
 		</>
 	);
 };

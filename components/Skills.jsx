@@ -4,17 +4,17 @@ import {
   CardHeader,
 	CardTitle
 } from './ui/card';
-import { } from 'react-icons'
+import { } from 'react-icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import counseling from '@/assets/images/counseling.png'
-import redesign from '@/assets/images/redesign.png'
-import fromScratch from '@/assets/images/from-scratch.png'
+import counseling from '@/assets/images/counseling.png';
+import redesign from '@/assets/images/redesign.png';
+import fromScratch from '@/assets/images/from-scratch.png';
 
 const Skills = () => {
 	return (
-	<section className='mx-10 my-20 flex flex-col gap-8'>
-		<h1 className='font-semibold text-3xl'>Skills</h1>
+	<section className='my-20 flex flex-col gap-8'>
+		<h1 className='font-semibold text-3xl mb-3'>Skills</h1>
 		<div className="flex flex-col lg:flex-row items-center justify-center gap-5 ">
 			<Card className='bg-[#ffc700]/10 border-none'>
 				<CardHeader><Image src={redesign} whidth={100} height={100} alt='Redesign icon' /></CardHeader>
