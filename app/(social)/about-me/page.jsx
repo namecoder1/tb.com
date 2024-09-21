@@ -1,42 +1,58 @@
 import Image from "next/image";
-import logo from '@/assets/images/logo.png'
+import logo from '@/assets/images/logo-mini.png'
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardFooter } from "@/components/ui/card";
 import SocialCard from "@/components/ui/SocialCard";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import ImageCard from "@/components/ui/ImageCard";
 
 const SocialPage = () => {
 	return (
-		<section className="text-white flex flex-col gap-y-10 md:grid md:grid-cols-6">
-			<aside className="col-span-2">
-				<div className="flex flex-col ">
-					<Image src={logo} width={100} height={100} alt="Tobia Bartolomei's Image" className='w-fit h-fit' />
-					<h1 className="text-4xl font-semibold">Tobia Bartolomei</h1>
-					<p>🛠️ Junior Front-End Web Developer</p>
-					<p>🇮🇹 Pesaro, PU, Italy</p>
-				</div>
-			</aside>
-			<div className="col-span-4">
-				<div className=" grid grid-cols-2">
-					<SocialCard className='bg-gray-400' 
-						title='prova 1'
-						image={logo}
-						imageAlt='ciao'
-						url='/ciao'
-						description='beuicgw'
-						external
-					/>
-					<SocialCard className='bg-gray-400' 
-						title='prova 1'
-						image={logo}
-						imageAlt='ciao'
-						url='/ciao'
-						description='beuicgw'
-						external
-					/>
-				</div>
-			</div>
-
-		</section>
+    <section className="py-20 px-10 lg:px-20 2xl:px-32 text-white">
+      <div className="flex flex-col xl:grid xl:grid-cols-8">
+        <div className="col-span-2 flex-col flex gap-x-1 xl:max-w-sm max-w-full  px-5">
+          <div className="mt-10 flex flex-col items-start justify-start gap-6">
+            <Image
+              src={logo}
+              width={150}
+              height={150}
+              alt="Immagine di Tobia Bartolomei"
+              className="w-auto h-full rounded-full"
+            />
+            <div className="mr-5 flex flex-col">
+              <div className="flex flex-col">
+                <h1 className="font-semibold text-xl">Tobia Bartolomei</h1>
+								<hgroup className="flex flex-col mt-1">
+									<h2 className="font-medium text-lg">🇮🇹 Pesaro, Italy</h2>
+									<h2 className="font-medium text-lg">🛠️ Junior FrontEnd Web Dev</h2>
+								</hgroup>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-6 flex flex-col xl:flex-row mt-10 xl:mt-0">
+          <Separator
+            orientation="vertical"
+            className="h-full w-[1px] hidden xl:inline-block"
+          />
+          <Separator
+            orientation="horizontal"
+            className="h-[1px] w-full xl:hidden"
+          />
+          <div className="xl:ml-5 mt-10 xl:mt-0 flex flex-col gap-y-5">
+						<ImageCard 
+							image={logo} 
+							link='/'
+							title='New Site'
+							subtitle='New SaaS Released'
+							description='bcewhiif ch ewuihciowh cewhcueowh hues ofhwuoch uwigvch w h hnoi hoiy nuhi oyo '
+						/>
+          </div>
+        </div>
+      </div>
+    </section>
 	);
 };
 
