@@ -1,5 +1,8 @@
-import {defineType, defineArrayMember} from 'sanity'
+import {defineType, defineField, defineArrayMember} from 'sanity'
 import {ImageIcon} from '@sanity/icons'
+import {ProjectsIcon} from '@sanity/icons'
+import {DocumentTextIcon} from '@sanity/icons'
+
 
 /**
  * This is the schema type for block content used in the post document type
@@ -24,33 +27,69 @@ export const blockContentType = defineType({
       // you want, and decide how you want to deal with it where you want to
       // use your content.
       styles: [
-        {title: 'Normal', value: 'normal'},
+        {title: 'Testo', value: 'normal'},
         {title: 'H1', value: 'h1'},
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
-        {title: 'Quote', value: 'blockquote'},
+        {title: 'Citazione', value: 'blockquote'},
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
-      // Marks let you mark up inline text in the Portable Text Editor
+      lists: [{title: 'Lista', value: 'bullet'}],
       marks: {
-        // Decorators usually describe a single property – e.g. a typographic
-        // preference or highlighting
         decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'},
+          {title: 'Grassetto', value: 'strong'},
+          {title: 'Corsivo', value: 'em'},
         ],
-        // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: 'URL',
             name: 'link',
             type: 'object',
+            title: 'Link',
             fields: [
               {
-                title: 'URL',
                 name: 'href',
                 type: 'url',
+                validation: (Rule) =>
+                  Rule.uri({
+                    allowRelative: false,
+                    scheme: ['http', 'https', 'mailto', 'tel'],
+                  }),
+              },
+            ],
+          },
+          {
+            name: 'postLink',
+            type: 'object',
+            title: 'Link internal post',
+            icon: DocumentTextIcon,
+            fields: [
+              {
+                name: 'referencePost',
+                type: 'reference',
+                title: 'Reference',
+                to: [ { type: 'post' }],
+
+              },
+            ],
+          },
+          {
+            name: 'projectLink',
+            type: 'object',
+            title: 'Link internal project',
+            icon: ProjectsIcon,
+            fields: [
+              {
+                name: 'referenceProject',
+                type: 'reference',
+                title: 'Reference',
+                to: [ { type: 'project' }],
+                fields: [
+                  {
+                    name: 'slug',
+                    name: 'slug',
+                    name: 'Slug',
+                  }
+                ]
               },
             ],
           },

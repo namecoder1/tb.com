@@ -3,6 +3,7 @@ import Image from "next/image";
 import logo from "@/assets/images/logo.png";
 
 const Footer = () => {
+	const currentYear = new Date().getFullYear();
 	return (
 		<footer className='bg-gray-950 flex flex-col items-center justify-evenly py-8 gap-6'>
 			<Image src={logo} width={35} height={35} alt="Logo" />
@@ -12,7 +13,7 @@ const Footer = () => {
 				<li><Link href='/blog'>Blog</Link></li>
 			</ul>
 			<>
-				<p className='mt-4 text-white'>All Rights Reserved | &copy; 2024 tobiabartolomei.com </p>
+				<p className='mt-4 text-white'>All Rights Reserved | &copy; {currentYear} tobiabartolomei.com </p>
 			</>
 		</footer>
 	);

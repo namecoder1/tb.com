@@ -9,7 +9,7 @@ const options = { next: { revalidate: 60 } };
 const LatestPosts = async () => {
 	const latests = await client.fetch(LASTPOSTS_QUERY, {}, options)
 	return (
-		<div className="flex flex-col my-20"> 
+		<div className="flex flex-col my-20 mx-10 lg:mx-20 2xl:mx-32"> 
 			<h1 className="font-semibold text-3xl mb-3">Latest Articles</h1>
 			<div className="grid grid-cols-1 grid-rows-2 md:grid-rows-none md:grid-cols-2 md:gap-x-10">
 				{latests.map((latest) => {
@@ -20,8 +20,11 @@ const LatestPosts = async () => {
 						image={latest.image}
 						altText={latest.altText} 
 						description={latest.description}
-						id={latest._id}
+						id={latest.id}
 						categories={latest.categories}
+						readTime={latest.readTime}
+						date={latest._updatedAt}
+						button={false}  // disable button for latest posts 2 cols layout 2 cols gap 10px 10px layout for desktop
 						/>
 					)
 				})}

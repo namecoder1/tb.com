@@ -1,11 +1,11 @@
-import {ProjectsIcon} from '@sanity/icons'
+import {OlistIcon} from '@sanity/icons'
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export const skillType = defineType({
 	name: 'skill',
 	title: 'Skill',
   type: 'document',
-  icon: ProjectsIcon,
+  icon: OlistIcon,
   fields: [
 		defineField({
 			name: 'title',
@@ -30,6 +30,21 @@ export const skillType = defineType({
           }),
         }
       ]
+    }),
+    defineField({
+      name: 'description',
+      type: 'text',
+      title: 'Descrizione',
+      description: 'Massimo 100 caratteri',
+      options: {
+        maxLength: 100,
+      }
+    }),
+    defineField({
+      name: 'link',
+      title: 'Link',
+      type: 'url',
+      description: 'Il link al sito ufficiale',
     }),
 		defineField({
 			name: "list",

@@ -1,6 +1,4 @@
 import '@/assets/styles/globals.css';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
 import { Montserrat } from 'next/font/google';
 
 
@@ -16,11 +14,9 @@ const MainLayout = ({ children }) => {
 				<link rel="icon" href="/icon-192x192.png" />
 			</head>
 			<body className={montserrat.className}>
-				<Navbar />
-				<main>
+				<main className='bg-gray-950 h-[100vh]'>
 					{children}
 				</main>
-				<Footer />
 			</body>
 		</html>
 	);

@@ -1,9 +1,6 @@
-# Getting Started
+### tobiabartolomei.com
 
-### Sanity and Next.js
-
-This is a [Sanity.io](https://sanity.io) and [Next.js](https://nextjs.org) project created following a Course on [Sanity Learn](https://sanity.io/learn).
-
+[![wakatime](https://wakatime.com/badge/user/018edc23-7885-44d3-8b1a-efd38be8a6f6/project/4df6dae4-6613-45a4-99c5-47477c938339.svg)](https://wakatime.com/badge/user/018edc23-7885-44d3-8b1a-efd38be8a6f6/project/4df6dae4-6613-45a4-99c5-47477c938339)
 
 ---
 1. Run the Devbox Shell

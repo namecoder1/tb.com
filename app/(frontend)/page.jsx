@@ -17,6 +17,7 @@ import profile from '@/assets/images/profile.jpg';
 import Skills from "@/components/Skills";
 import Tools from "@/components/Tools";
 import LatestPosts from "@/components/LatestPosts";
+import LatestProject from "@/components/LatestProject";
 
 const HomePage = async () => {
 	const skills = [
@@ -29,7 +30,7 @@ const HomePage = async () => {
 
 	return (
 		<>
-		<section className='flex flex-col md:flex-row items-center justify-center md:space-x-10 mt-20 mb-32'>
+		<section className='flex flex-col md:flex-row items-center justify-center md:space-x-10 mt-20 mb-32 mx-10 lg:mx-20 2xl:mx-32'>
 			<Card className='text-black w-fit p-2 my-10 '>
 				<CardHeader className='flex flex-col items-center'>
 					<Image src={cardImage} width={100} height={100} alt="Tobia Bartolomei's Image" className='rounded-full w-auto h-auto' />
@@ -57,6 +58,7 @@ const HomePage = async () => {
 		<Skills />
 		<Tools />
 		<LatestPosts />
+		<LatestProject />
 		</>
 	);
 };
