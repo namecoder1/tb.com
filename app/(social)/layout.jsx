@@ -14,7 +14,7 @@ const MainLayout = ({ children }) => {
 				<link rel="icon" href="/icon-192x192.png" />
 			</head>
 			<body className={montserrat.className}>
-				<main className='bg-gray-950 h-[100vh]'>
+				<main className='dark:bg-slate-950 h-[100vh]'>
 					{children}
 				</main>
 			</body>
