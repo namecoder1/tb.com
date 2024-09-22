@@ -58,7 +58,7 @@ export const HamburgerMenu = () => {
                     <Link
                       onClick={() => setOpen((prev) => !prev)}
                       className={
-                        "flex text-white gap-2 items-center justify-center w-full px-5 py-2 rounded-xl bg-primary"
+                        "flex text-white dark:text-black gap-2 items-center justify-center w-full px-5 py-2 rounded-xl bg-primary"
                       }
                       href={route.href}
                     >

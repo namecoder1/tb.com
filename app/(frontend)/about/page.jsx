@@ -41,7 +41,7 @@ const AboutPage = async () => {
   const info = await client.fetch(INFO_QUERY, {}, options);
   return (
     <section className="my-20 mx-10 lg:mx-20 2xl:mx-32 ">
-      <h1 className="text-black text-3xl font-semibold flex items-center">
+      <h1 className="text-3xl font-semibold flex items-center">
         <GoInfo className="inline-block mr-2" />
         About Me
       </h1>
@@ -76,35 +76,35 @@ const AboutPage = async () => {
           </div>
           <div className="mt-10 2xl:mr-5 grid grid-cols-2 grid-rows-2 gap-y-2 max-w-sm 2xl:max-w-full items-center justify-center">
             <Link
-              className="underline underline-offset-2"
+              className="underline underline-offset-2 flex items-center justify-center 2xl:justify-start"
               href={info.social.insta.instaUrl}
               target="_blank"
             >
-              <GrInstagram className="inline-block text-lg mr-2" />
+              <GrInstagram className="inline-block mr-2" />
               {info.social.insta.instaName}
             </Link>
             <Link
-              className="underline underline-offset-2"
+              className="underline underline-offset-2 flex items-center justify-center 2xl:justify-start"
               href={info.social.github.githubUrl}
               target="_blank"
             >
-              <BsGithub className="inline-block text-lg mr-2" />
+              <BsGithub className="inline-block mr-2" />
               {info.social.github.githubName}
             </Link>
             <Link
-              className="underline underline-offset-2"
+              className="underline underline-offset-2 flex items-center justify-center 2xl:justify-start"
               href={info.social.linkedin.linkedinUrl}
               target="_blank"
             >
-              <GrLinkedin className="inline-block text-lg mr-2" />
+              <GrLinkedin className="inline-block mr-2" />
               {info.social.linkedin.linkedinName}
             </Link>
             <Link
-              className="underline underline-offset-2"
+              className="underline underline-offset-2 flex items-center justify-center 2xl:justify-start"
               href={info.social.x.xUrl}
               target="_blank"
             >
-              <BsTwitterX className="inline-block text-lg mr-2" />
+              <BsTwitterX className="inline-block mr-2" />
               {info.social.x.xName}
             </Link>
           </div>

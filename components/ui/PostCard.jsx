@@ -4,6 +4,7 @@ import { Button } from "./button";
 import { urlFor } from "@/sanity/lib/image";
 import { FaReadme } from 'react-icons/fa'
 import { LuClock } from "react-icons/lu";
+import Category from "./category";
 
 import { Separator } from "./separator";
 import { formatDate } from "@/utils";
@@ -33,8 +34,10 @@ const PostCard = ({
 			<h2 className='text-xl font-semibold mt-5'>{title}</h2>
 			<p>{formatDate(date)} | <LuClock className='inline-block text-lg mx-1' />{readTime} Min</p>
 			<ul className="my-2 flex">
-					{categories && categories.map((category, index) => {
-						return <li key={category.slug || index} className='inline-block mr-2 text-sm bg-gray-300 py-1 px-2'><Link href={`/blog/${category.slug}`}>{category.title}</Link></li>;
+					{categories && categories.map((category) => {
+						return (
+							<Category slug={category.slug} title={category.title} id={category.id} />
+						)
 					})}
 			</ul>
 			<Separator className='my-2' />

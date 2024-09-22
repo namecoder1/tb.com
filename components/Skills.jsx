@@ -13,7 +13,7 @@ import fromScratch from '@/assets/images/from-scratch-white.png';
 
 const Skills = () => {
 	return (
-	<section className='my-32 flex flex-col gap-8 bg-slate-950 text-white py-20 px-10 lg:px-20 2xl:px-32'>
+	<section className='my-32 flex flex-col gap-8 bg-slate-950 dark:bg-zinc-800/70 text-white py-20 px-10 lg:px-20 2xl:px-32'>
 		<div className='lg:grid lg:grid-cols-5 mb-10'>
 			<h1 className='font-semibold text-6xl mb-3 col-span-3'>Skills</h1>
 			<p className='col-span-2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quia accusamus suscipit odit perspiciatis mollitia fugiat voluptates non commodi libero?</p>

@@ -29,6 +29,7 @@ const SocialPage = () => {
 									<h2 className="font-medium text-lg">🛠️ Junior FrontEnd Web Dev</h2>
 								</hgroup>
               </div>
+              fdbe2uio
             </div>
           </div>
         </div>

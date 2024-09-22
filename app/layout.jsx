@@ -1,6 +1,7 @@
 import '@/assets/styles/globals.css';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata = {
 	title: 'Home | Tobia Bartolomei',
@@ -24,9 +25,16 @@ const RootLayout = ({children}) => {
 	return (
 		<html lang='it'>
 			<body>
-				{children}
-				<Analytics />
-				<SpeedInsights />
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					{children}
+					<Analytics />
+					<SpeedInsights />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

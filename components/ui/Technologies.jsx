@@ -13,7 +13,7 @@ const Technologies = ({ technology, id, image, imageAlt, description, link }) =>
 	return (
 		<HoverCard key={id}>
 			<HoverCardTrigger asChild>
-				<div className="bg-gray-200 w-fit h-fit flex items-center justify-center gap-2 py-2 px-4 rounded-lg" >
+				<div className="bg-gray-200 dark:bg-zinc-700 w-fit h-fit flex items-center justify-center gap-2 py-2 px-4 rounded-lg" >
 					<Image src={image} alt={imageAlt} width={30} height={30} />
 					<p>{technology}</p>
 				</div>

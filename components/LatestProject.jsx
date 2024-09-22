@@ -28,8 +28,8 @@ const LatestProject = async () => {
 				</div>
 				<div className="w-xl lg:mt-10 xl:col-span-2">
 					<p>{latestProject.description}</p>
-					<div className="hidden 2xl:flex flex-col w-fit items-start py-3 px-4 rounded-xl bg-slate-700/20 justify-start  mt-10">
-							<h1 className="text-black mb-3 font-semibold text-xl">Tech Stack</h1>
+					<div className="hidden 2xl:flex flex-col w-fit items-start py-3 px-4 rounded-xl bg-slate-700/20 dark:bg-zinc-800 justify-start  mt-10">
+							<h1 className="mb-3 font-semibold text-xl">Tech Stack</h1>
 							<div className="flex gap-2 items-center justify-start flex-wrap">
 								{latestProject.technologies.map((technology) => {
 									return (

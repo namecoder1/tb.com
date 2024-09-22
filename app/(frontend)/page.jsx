@@ -35,7 +35,7 @@ const HomePage = async () => {
 	return (
 		<>
 		<section className='flex flex-col md:flex-row items-center justify-center md:space-x-10 mt-20 mb-32 mx-10 lg:mx-20 2xl:mx-32'>
-			<Card className='text-black w-fit p-2 my-10 '>
+			<Card className='text-black dark:text-white w-fit p-2 my-10 '>
 				<CardHeader className='flex flex-col items-center'>
 					<Image src={cardImage} width={100} height={100} alt="Tobia Bartolomei's Image" className='rounded-full w-auto h-auto' />
 					<h1 className='text-xl font-semibold'>Tobia Bartolomei</h1>
