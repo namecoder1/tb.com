@@ -15,6 +15,16 @@ import { INFO_QUERY } from "@/sanity/lib/queries";
 
 const options = { next: { revalidate: 60 } };
 
+export const metadata = {
+  title: 'About',
+  description: "Ciao mi chiamo Tobia Bartolomei, sono un Junior FrontEnd Web Developer, in questa pagina puoi trovare tutte le mie informazioni utili. Dagli un'occhiata!",
+  openGraph: {
+    title: 'About',
+    description: "Ciao mi chiamo Tobia Bartolomei, sono un Junior FrontEnd Web Developer, in questa pagina puoi trovare tutte le mie informazioni utili. Dagli un'occhiata!",
+    url: 'https://tob.codes/about'
+  }
+}
+
 import figma from '@/assets/images/figma.png'
 import vsc from '@/assets/images/vscode.png'
 import illustrator from '@/assets/images/illustrator.png'

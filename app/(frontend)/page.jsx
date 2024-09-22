@@ -19,6 +19,10 @@ import Tools from "@/components/Tools";
 import LatestPosts from "@/components/LatestPosts";
 import LatestProject from "@/components/LatestProject";
 
+export const metadata = {
+	title: 'Homepage | Tobia Bartolomei'
+}
+
 const HomePage = async () => {
 	const skills = [
 		{name: 'React', logo: 'FaReact' },

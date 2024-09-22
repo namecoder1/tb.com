@@ -70,6 +70,12 @@ export const postType = defineType({
       title: 'Testo',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'seoDescription',
+      title: 'Descrizione SEO',
+      type: 'text',
+      description: 'La descrizione SEO del post',
+    })
   ],
   preview: {
     select: {

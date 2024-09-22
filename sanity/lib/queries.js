@@ -33,7 +33,8 @@ export const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slu
     bio
   },
   'categories': categories[] -> {title, 'slug': slug.current, 'id': _id},
-  "readTime": round(length(pt::text(body)) / 5 / 180 )
+  "readTime": round(length(pt::text(body)) / 5 / 180 ),
+  seoDescription
 }`)
 
 export const ALLCATEGORIES_QUERY = defineQuery(`*[_type == 'category']{
@@ -83,7 +84,7 @@ export const PROJECTS_QUERY = defineQuery(`*[_type == 'project']{
   'imageAlt': image.alt,
   "wakaImage": wakaLinks.wakaImage,
   "wakaUrl": wakaLinks.wakaUrl,
-  type
+  type,
 }`)
 
 export const PROJECT_QUERY = defineQuery(`*[_type == 'project' && slug.current == $slug][0]{
@@ -107,7 +108,8 @@ export const PROJECT_QUERY = defineQuery(`*[_type == 'project' && slug.current =
   'imageAlt': image.alt,
   "wakaImage": wakaLinks.wakaImage,
   "wakaUrl": wakaLinks.wakaUrl,
-  type
+  type,
+  seoDescription
 }`)
 
 export const LASTPROJECT_QUERY = defineQuery(`*[_type == "project"] | order(_createdAt asc) [0] {
@@ -129,7 +131,7 @@ export const LASTPROJECT_QUERY = defineQuery(`*[_type == "project"] | order(_cre
   'imageAlt': image.alt,
   "wakaImage": wakaLinks.wakaImage,
   "wakaUrl": wakaLinks.wakaUrl,
-  type
+  type,
 }`)
 
 export const FRAMEWORKS_QUERY = defineQuery(`*[_type == 'skill' && list == 'Frameworks' ] {

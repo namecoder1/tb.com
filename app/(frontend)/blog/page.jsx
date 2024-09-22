@@ -6,6 +6,15 @@ import { GrArticle } from "react-icons/gr";
 import Category from "@/components/ui/category";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
+export const metadata = {
+	title: 'Blog | Tobia Bartolomei',
+	description: 'Dentro al mio blog puoi trovare molti articoli di diverse categorie. I miei argomenti preferiti sono il Web Develop e le News sul mondo Tech.',
+	openGraph: {
+		titlle: 'Blog | Tobia Bartolomei',
+		description: 'Dentro al mio blog puoi trovare molti articoli di diverse categorie. I miei argomenti preferiti sono il Web Develop e le News sul mondo Tech.',
+		url: 'https://tob.codes/blog'
+	}
+}
 
 const options = { next: { revalidate: 60 } };
 

@@ -3,6 +3,20 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
 
+export const metadata = {
+	title: 'Not Found | Tobia Bartolomei',
+	description: 'Ciao, mi chiamo Tobia Bartolomei, sono un Junior Frontend Web Developer e questo è il mio Portfolio Personale.',
+	language: 'it',
+	openGraph: {
+		title: 'Not Found',
+		description: 'Ciao, mi chiamo Tobia Bartolomei, sono un Junior Frontend Web Developer e questo è il mio Portfolio Personale.',
+    type: 'website',
+    locale: 'it_IT',
+    url: 'https://tob.codes',
+    site_name: 'Tobia Bartolomei',
+	},
+}
+
 const NotFound = () => {
 	const router = useRouter();
 	return (

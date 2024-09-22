@@ -13,6 +13,33 @@ import Link from "next/link";
 
 const options = { next: { revalidate: 60 } };
 
+export async function generateMetadata({ params }) {
+  const project = await client.fetch(PROJECT_QUERY, { slug: params.slug });
+  if (!project) {
+    return { title: 'Progetto Non Trovato' };
+  }
+  return {
+    title: project.title || 'Nuovo Progetto', 
+		description: project.seoDescription || 'Progetto Senza Descrizione',
+		openGraph: {
+			title: project.title || 'Nuovo Progetto',
+      description: project.seoDescription || 'Progetto Senza Descrizione',
+      type: 'website',
+      locale: 'it_IT',
+      url: `https://tob.codes/projects/${project.slug}`,
+      site_name: 'Tobia Bartolomei',
+      images: [
+        {
+          url: project.image,
+          alt: project.imageAlt,
+          width: 500,
+          height: 200,
+        },
+      ],
+		}
+  };
+}
+
 export default async function ProjectPage({ params }) {
 	const project = await client.fetch(PROJECT_QUERY, params, options);
 	if (!project) {

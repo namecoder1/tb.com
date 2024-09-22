@@ -69,7 +69,6 @@ export const projectType = defineType({
       title: 'Testo',
       type: 'blockContent',
     }),
-
     defineField({
       name: 'image',
       title: 'Immagine',
@@ -95,5 +94,11 @@ export const projectType = defineType({
       type: 'array',
       of: [{type: 'reference', to: {type: 'skill'}}]
     }),
+    defineField({
+      name: 'seoDescription',
+      title: 'Descrizione SEO',
+      type: 'text',
+      description: 'La descrizione SEO del progetto',
+    })
 	]
 })

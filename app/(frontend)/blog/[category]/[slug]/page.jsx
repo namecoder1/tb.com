@@ -11,6 +11,32 @@ import { Separator } from '@/components/ui/separator'
 import { LuClock } from "react-icons/lu";
 import ProgressBar from '@/components/ui/ProgessBar'
 
+export async function generateMetadata({ params }) {
+  const project = await client.fetch(POST_QUERY, { slug: params.slug });
+  if (!project) {
+    return { title: 'Progetto Non Trovato' };
+  }
+  return {
+    title: project.title || 'Nuovo Progetto', 
+		description: project.seoDescription || 'Progetto Senza Descrizione',
+		openGraph: {
+			title: project.title || 'Nuovo Progetto',
+      description: project.seoDescription || 'Progetto Senza Descrizione',
+      type: 'website',
+      locale: 'it_IT',
+      url: `https://tob.codes/${project.categories[0].slug}/${project.href}`,
+      site_name: 'Tobia Bartolomei',
+      images: [
+        {
+          url: project.image,
+          alt: project.imageAlt,
+          width: 500,
+          height: 200,
+        },
+      ],
+		}
+  };
+}
 
 const options = { next: { revalidate: 60 } }
 
