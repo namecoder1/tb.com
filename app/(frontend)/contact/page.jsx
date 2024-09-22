@@ -1,4 +1,4 @@
-import ContactForm from '@/components/ContactForm'
+
 
 export const metadata = {
 	title: 'Contattami',
@@ -14,7 +14,7 @@ const ContactPage = () => {
 	return (
 		<section className='my-20 mx-10 lg:mx-20 2xl:mx-32'>
 			<h1 className='text-3xl font-semibold flex items-center'>Contact Me</h1>
-			<ContactForm />
+
 		</section>
 	);
 };
