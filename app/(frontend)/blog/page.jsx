@@ -37,9 +37,6 @@ const BlogPage = async () => {
 					<ScrollBar orientation='horizontal' />
 				</ScrollArea>
 			</div>
-			<div className="flex w-full lg:hidden">
-				<SearchBar className='flex gap-1 items-center justify-center w-full' button />
-			</div>
 			<div className="flex flex-col md:grid md:grid-cols-2 xl:grid xl:grid-cols-3 my-20 gap-10">
 				{posts.map((post) => {
 					return (

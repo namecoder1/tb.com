@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import Clock from "./ui/Clock";
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
 import logo from '@/assets/images/logo.png';
 import { HamburgerMenu } from "./ui/HamburgerMenu";
 import { ThemeToggle } from "./ui/ThemeToggle";
-import SearchBar from "./ui/SearchBar";
 
 const Navbar = () => {
 	return (
@@ -32,14 +30,13 @@ const Navbar = () => {
 				<div className='md:hidden'>
 					<HamburgerMenu />
 				</div>
-				<Button size='xs' variant='outline' className='hidden'><Link href='/contact'>Contact</Link></Button>
 			</nav>
 			<div className="flex items-center justify-center gap-2">
 				<div className="ml-2 lg:ml-0">
 					<ThemeToggle />
 				</div>
 				<div className='hidden lg:flex'>
-					<SearchBar />
+					<Button className='border-[1px] bg-transparent text-black dark:text-white hover:bg-transparent border-slate-400 dark:border-white rounded-xl' asChild><Link href='/contact'>Contattami</Link></Button>
 				</div>
 			</div>
 		</header>
