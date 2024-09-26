@@ -7,29 +7,15 @@ import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function SearchResults() {
-  const searchParams = useSearchParams();
-  const query = searchParams.get('q');
-  const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState(''); // Stato per memorizzare il parametro di ricerca
 
   useEffect(() => {
-    if (query) {
-      setLoading(true);
-      fetch(`/api/search?q=${encodeURIComponent(query)}`)
-				.then((res) => {
-					if (!res.ok) {
-						throw new Error(`Error: ${res.statusText}`);
-					}
-					return res.json();
-				})
-        .then((data) => {
-          setResults(data);
-          setLoading(false);
-        });
-    }
-  }, [query]);
+      // useEffect verrà eseguito solo nel browser, non durante il rendering sul server
+      const searchParams = useSearchParams(); // Ottieni i parametri di ricerca
+      const q = searchParams.get('query'); // Prendi il parametro "query" dalla URL
+      setQuery(q); // Memorizza il valore di "query" nello stato
+  }, []); // L'array vuoto [] significa che useEffect verrà eseguito solo al caricamento della pagina
 
-	console.log(results)
 
   return (
     <Suspense>
