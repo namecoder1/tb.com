@@ -8,9 +8,9 @@ const Container = ({
 	className = ""
 }) => {
 	return (
-		<div className={`max-w-[350px] max-h-[350px] w-[350px] h-[350px] border-[1px] border-black/20 dark:border-none rounded-xl p-2 ${className}`}>
+		<Card className={`w-60 h-60 bg-transparent ${className}`}>
 			{children}
-		</div>
+		</Card>
 	);
 };
 

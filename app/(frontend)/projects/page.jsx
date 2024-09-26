@@ -19,7 +19,7 @@ const ProjectsPage = async () => {
 	const projects = await client.fetch(PROJECTS_QUERY, {}, options);
 	return (
 		<section className="my-20 mx-10 lg:mx-20 2xl:mx-32">
-			<h1 className="font-semibold text-3xl mb-3 flex items-center"><GrProjects className="inline-block mr-2" /> Projects</h1>
+			<h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl mb-3 flex items-center"><GrProjects className="inline-block mr-2" /> Projects</h1>
 			<ul className="grid gri-cols-1 grid-rows my-20 lg:grid-cols-2 gap-x-10 gap-y-14 items-center">
 				{projects.map((project) => {
 					return (

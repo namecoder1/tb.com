@@ -41,7 +41,7 @@ const AboutPage = async () => {
   const info = await client.fetch(INFO_QUERY, {}, options);
   return (
     <section className="my-20 mx-10 lg:mx-20 2xl:mx-32 ">
-      <h1 className="text-3xl font-semibold flex items-center">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold flex items-center mb-10">
         <GoInfo className="inline-block mr-2" />
         About Me
       </h1>

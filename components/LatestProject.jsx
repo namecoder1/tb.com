@@ -10,7 +10,7 @@ const LatestProject = async () => {
 	const latestProject = await client.fetch(LASTPROJECT_QUERY, {}, options);
 	return (
 		<section className="flex flex-col my-32 mx-10 lg:mx-20 2xl:mx-32">
-			<h1 className="font-semibold text-3xl mb-3">Latest Project</h1>
+			<h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl mb-3">Latest Project</h1>
 			<div className="flex flex-col xl:grid xl:grid-cols-3 gap-x-10 gap-y-5 items-start w-auto">
 				<div className="w-full">
 					<Project 

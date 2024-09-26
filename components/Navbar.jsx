@@ -8,6 +8,7 @@ import Link from "next/link";
 import logo from '@/assets/images/logo.png';
 import { HamburgerMenu } from "./ui/HamburgerMenu";
 import { ThemeToggle } from "./ui/ThemeToggle";
+import SearchBar from "./ui/SearchBar";
 
 const Navbar = () => {
 	return (
@@ -37,7 +38,9 @@ const Navbar = () => {
 				<div className="ml-2 lg:ml-0">
 					<ThemeToggle />
 				</div>
-				<Input type='search' name='searchbar' placeholder='Cerca' className='border-[1px] dark:text-white border-slate-400 dark:border-white rounded-xl md:py-[0.6rem] px-4 py-2 m-0 h-[3.1rem] hidden lg:flex max-w-[180px]' />
+				<div className='hidden lg:flex'>
+					<SearchBar />
+				</div>
 			</div>
 		</header>
 		</>

@@ -58,7 +58,7 @@ export default async function PostPage({ params }) {
           height="300"
         /> : null}
         <div className='flex flex-col items-start justify-start gap-4 mt-4 xl:mt-0'>
-          <h1 className="text-2xl md:text-4xl 2xl:text-5xl font-bold text-balance">{post?.title}</h1>
+          <h1 className="text-3xl md:text-4xl 2xl:text-5xl font-bold text-balance">{post?.title}</h1>
           <div className='flex items-center gap-1 text-sm'>
             <div className='flex gap-2 items-center'>
               <Image src={post?.author.image} alt={`Immagine di ${post?.author.name}`} width={40} height={40} className='rounded-full inline-block mr-1' />

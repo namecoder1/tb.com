@@ -11,9 +11,10 @@ const Tools = async () => {
 	const languages = await client.fetch(LANGUAGES_QUERY, {}, options);
 	return (
 		<section className=' my-32 flex flex-col mx-10 lg:mx-20 2xl:mx-32'>
-			<h1 className='font-semibold text-3xl mb-3'>Tools & Languages</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat ex quae, soluta ad cumque eligendi ab officia id beatae iure.</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex autem ducimus, inventore doloremque explicabo corrupti quam accusantium, tempora commodi molestias aspernatur. Tempore sequi, praesentium hic aliquid reiciendis numquam eum ducimus iure totam dolorum magnam?</p>
+			<h1 className='font-semibold text-3xl sm:text-4xl md:text-5xl mb-3'>Tools & Languages</h1>
+			<p>Queste sono le skill che ho sviluppato dall'inizio del mio percorso nel mondo dello sviluppo.</p>
+			<p>Attualmente prediligo il mondo di React e Next, mentre per lo stile utilizzo Tailwind unito a Shadcn, di cui mi sono totalmente innamorato dalla prima riga di codice.</p>
+			<p><span className="font-semibold">ps:</span> so React non è un framework anche se l'ho inserito in quella lista, non arrabbiatevi 😁.</p>
 			<div className="flex items-start justify-evenly flex-wrap gap-x-10 gap-y-20 md:grid md:grid-cols-3 md:grid-rows-1 mt-10">
 				<div className="flex flex-col gap-6 items-center justify-start">
 					<h1>FRAMEWORKS</h1>

@@ -50,7 +50,7 @@ export default async function ProjectPage({ params }) {
       <ProgressBar />
 			<div className="flex flex-col justify-start items-start lg:flex-row lg:justify-between lg:items-center mb-4">
 				<hgroup className="mb-2">
-					<h1 className="font-semibold text-5xl mb-1">{project.title}</h1>
+					<h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl mb-1">{project.title}</h1>
 					<h2 className="font-light text-2xl">{project.type} | {project.publishedAt}</h2>
 				</hgroup>
 				<WakaTime image={project.wakaImage} url={project.wakaUrl} />
