@@ -16,7 +16,7 @@ const Skills = () => {
 	<section className='my-32 flex flex-col gap-8 bg-slate-950 dark:bg-zinc-800/70 text-white py-20 px-10 lg:px-20 2xl:px-32'>
 		<div className='lg:grid lg:grid-cols-5 mb-10'>
 			<h1 className='font-semibold text-3xl sm:text-4xl md:text-5xl mb-3 col-span-3'>Skills</h1>
-			<p className='col-span-2'>Nel corso dei miei lavori per clienti, side projects e siti creati come allenamento ho sviluppato queste skills.</p>
+			<p className='col-span-2'>Nel corso dei miei lavori per clienti, side projects e siti creati come allenamento ho sviluppato queste competenze.</p>
 		</div>
 		<div className="flex flex-col lg:flex-row items-center justify-center gap-5 ">
 			<Card className='bg-transparent text-white'>
