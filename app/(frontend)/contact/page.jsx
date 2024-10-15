@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaLinkedin } from 'react-icons/fa'
-import { FaEnvelope, FaGithub, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaXTwitter, FaPaypal } from "react-icons/fa6";
+import { RiContactsLine } from "react-icons/ri";
+import { PiShareNetworkBold } from "react-icons/pi";
 import { client } from "@/sanity/lib/client";
 import { INFO_QUERY } from "@/sanity/lib/queries";
 
 import { FaInstagram } from 'react-icons/fa'
-import { Form, FormItem } from "@/components/ui/form";
 import ContactForm from "@/components/ContactForm";
 
 
@@ -26,40 +26,23 @@ const ContactPage = async () => {
 	const infos = await client.fetch(INFO_QUERY, {}, options)
 	return (
 		<section className='my-20 mx-10 lg:mx-20 2xl:mx-32'>
-			<h1 className='text-3xl font-semibold'>Contact Me</h1>
-			<p className="mt-2">
+			<h1 className='font-semibold text-3xl sm:text-4xl md:text-5xl mb-3 flex items-center'><RiContactsLine className="inline-block mr-2" />Contact Me</h1>
+			<p className="mt-5">
 				Se stai cercando qualcuno che possa trasformare le tue idee in un sito web moderno e performante, sei nel posto giusto.
 				Non esitare a contattarmi per discutere il tuo prossimo progetto. Insieme possiamo fare grandi cose!
 			</p>
 			<div className="flex flex-col gap-y-20">
 				<ContactForm />
-				{/* <div className="my-4 flex flex-col items-center justify-center">
-					<h2 className="text-left font-semibold underline underline-offset-2 text-xl mb-2">Scrivimi</h2>
-					<div className="flex flex-col sm:flex-row gap-x-5 gap-y-3">
-					<Button className="flex items-center">
-						<Link href='mailto:bartolomei.private@gmail.com' className="flex items-center justify-center"><FaEnvelope className="inline-block mr-2" />bartolomei.private@gmail.com</Link>
-					</Button>
-					<Button className="flex items-center">
-						<Link href='mailto:info@tobiabartolomei.com' className="flex items-center justify-center"><FaEnvelope className="inline-block mr-2" />info@tobiabartolomei.com</Link>
-					</Button>
+				<div>
+					<h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl flex items-center"><PiShareNetworkBold className="inline-block mr-2" />Social Accounts</h1>
+					<div className="flex items-center justify-center gap-x-8 gap-y-4 mt-5 flex-wrap">
+						<Link target="_blank" href={infos.social.insta.instaUrl} className="bg-secondary py-1 px-3 rounded-md flex items-center text-lg"><FaInstagram className="inline-block mr-2" />{infos.social.insta.instaName}</Link>
+						<Link target="_blank" href={infos.social.github.githubUrl} className="bg-secondary py-1 px-3 rounded-md flex items-center text-lg"><FaGithub className="inline-block mr-2" />{infos.social.github.githubName}</Link>
+						<Link target="_blank" href={infos.social.linkedin.linkedinUrl} className="bg-secondary py-1 px-3 rounded-md flex items-center text-lg"><FaLinkedin className="inline-block mr-2" />{infos.social.linkedin.linkedinName}</Link>
+						<Link target="_blank" href={infos.social.x.xUrl} className="bg-secondary py-1 px-3 rounded-md flex items-center text-lg"><FaXTwitter className="inline-block mr-2" />{infos.social.x.xName}</Link>
+						<Link target="_blank" href={infos.utils.paypalUrl} className="bg-secondary py-1 px-3 rounded-md flex items-center text-lg"><FaPaypal className="inline-block mr-2" />Tobia Bartolomei</Link>
 					</div>
 				</div>
-				<div className="mt-2 w-full gap-5 flex-col flex items-center justify-center">
-					<h2 className="text-left font-semibold underline underline-offset-2 text-xl mb-2">Social Accounts</h2>
-						<Button className="flex items-center">
-							<Link href={infos.social.insta.instaUrl} className="flex items-center justify-center"><FaInstagram className="inline-block mr-2" />{infos.social.insta.instaName}</Link>
-						</Button>
-						<Button className="flex items-center">
-							<Link href={infos.social.linkedin.linkedinUrl} className="flex items-center justify-center"><FaLinkedin className="inline-block mr-2" />{infos.social.linkedin.linkedinName}</Link>
-						</Button>
-						<Button className="flex items-center">
-							<Link href={infos.social.github.githubUrl} className="flex items-center justify-center"><FaGithub className="inline-block mr-2" />{infos.social.github.githubName}</Link>
-						</Button>
-						<Button className="flex items-center">
-							<Link href={infos.social.x.xUrl} className="flex items-center justify-center "><FaXTwitter className="inline-block mr-2" />{infos.social.x.xName}</Link>
-						</Button>
-				</div> */}
-
 			</div>
 
 		</section>
