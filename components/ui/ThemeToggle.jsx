@@ -23,7 +23,7 @@ export function ThemeToggle() {
           <span className="sr-only">Cambia tema</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className='mt-1 border-[1px] bg-transparent text-black dark:text-white hover:bg-transparent border-slate-400 dark:border-white rounded-xl'>
+      <DropdownMenuContent align="end" className='mt-1 border-[1px] bg-background text-black dark:text-white hover:bg-transparent border-slate-400 dark:border-white rounded-xl'>
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Chiaro
         </DropdownMenuItem>

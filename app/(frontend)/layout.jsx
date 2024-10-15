@@ -1,4 +1,4 @@
-
+import Upper from '@/components/Upper';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 
@@ -30,6 +30,7 @@ const MainLayout = ({ children }) => {
 				<Navbar />
 				<main>
 					{children}
+					<Upper />
 				</main>
 				<Footer />
 			</>
