@@ -57,42 +57,6 @@ export const blockContentType = defineType({
               },
             ],
           },
-          {
-            name: 'postLink',
-            type: 'object',
-            title: 'Link internal post',
-            icon: DocumentTextIcon,
-            fields: [
-              {
-                name: 'referencePost',
-                type: 'reference',
-                title: 'Reference',
-                to: [ { type: 'post' }],
-
-              },
-            ],
-          },
-          {
-            name: 'projectLink',
-            type: 'object',
-            title: 'Link internal project',
-            icon: ProjectsIcon,
-            fields: [
-              {
-                name: 'referenceProject',
-                type: 'reference',
-                title: 'Reference',
-                to: [ { type: 'project' }],
-                fields: [
-                  {
-                    name: 'slug',
-                    name: 'slug',
-                    name: 'Slug',
-                  }
-                ]
-              },
-            ],
-          },
         ],
       },
     }),

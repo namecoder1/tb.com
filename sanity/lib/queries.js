@@ -47,6 +47,7 @@ export const CATEGORIES_QUERY = defineQuery(`*[_type == "category" && slug.curre
   title,
   'slug': slug.current,
   'id': _id,
+  description,
   "posts": *[_type == "post" && references(^._id)]{
   'id': _id,
   _updatedAt,
@@ -57,6 +58,7 @@ export const CATEGORIES_QUERY = defineQuery(`*[_type == "category" && slug.curre
   'image' : mainImage.asset -> url,
   'author': author -> name,
   'categories': categories[] -> {title, 'slug': slug.current, 'id': _id},
+  "readTime": round(length(pt::text(body)) / 5 / 180 ),
     }
   }`)
 

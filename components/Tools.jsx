@@ -1,4 +1,3 @@
-import { Separator } from "./ui/separator";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { FRAMEWORKS_QUERY, TOOLS_QUERY, LANGUAGES_QUERY } from '@/sanity/lib/queries';
@@ -27,7 +26,6 @@ const Tools = async () => {
 								</li>
 							)
 						})}
-						<Separator />
 					</ul>
 				</div>
 				<div className="flex flex-col gap-6 items-center justify-start">
@@ -41,7 +39,6 @@ const Tools = async () => {
 								</li>
 							)
 						})}
-						<Separator />
 					</ul>
 				</div>
 				<div className="flex flex-col gap-6 items-center justify-start">
@@ -55,7 +52,6 @@ const Tools = async () => {
 								</li>
 							)
 						})}
-						<Separator />
 					</ul>
 				</div>
 			</div>

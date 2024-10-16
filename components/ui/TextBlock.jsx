@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import {PortableText} from '@portabletext/react';
-import { FaDotCircle } from "react-icons/fa";
+import { GoDot } from "react-icons/go";
 import Link from "next/link";
 
 const imageComponent = (props) => 
@@ -24,12 +24,14 @@ const imageComponent = (props) =>
 const components = {
   block: {
     h1: ({children}) => <h1 className="text-3xl font-semibold">{children}</h1>,
+    h2: ({children}) => <h2 className="text-2xl font-semibold">{children}</h2>,
+    h3: ({children}) => <h3 className="text-xl font-semibold">{children}</h3>,
   },
   list: {
     bullet: ({children}) => <ul className="mt-xl">{children}</ul>
   },
   listItem: {
-    bullet: ({children}) => <li><FaDotCircle className="inline-block text-lg mr-1" />{children}</li>
+    bullet: ({children}) => <li className="my-5"><GoDot className="inline-block text-lg mr-1" />{children}</li>
   },
   types: {
     image: imageComponent
@@ -40,19 +42,6 @@ const components = {
         <Link href={value?.href} target="_blank" className="underline underline-offset-2">{children}</Link>
       )
     },
-    postLink: ({value, children}) => {
-
-      return (
-        <Link href={value} className="underline">{children}</Link>
-      )
-    },
-    projectLink: ({value, children}) => {
-      const href = value?.post?.markDefs?.slug || "#";
-      console.log(href)
-      return (
-        <Link href={value} className="underline">{children}</Link>
-      )
-    }
   },
 };
 

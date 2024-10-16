@@ -10,6 +10,7 @@ import Category from '@/components/ui/category'
 import { Separator } from '@/components/ui/separator'
 import { LuClock } from "react-icons/lu";
 import ProgressBar from '@/components/ui/ProgessBar'
+import { Button } from '@/components/ui/button'
 
 export async function generateMetadata({ params }) {
   const project = await client.fetch(POST_QUERY, { slug: params.slug });
@@ -83,7 +84,7 @@ export default async function PostPage({ params }) {
           <TextBlock value={post?.body}  />
         </div>
       ) : null}
-      <Link href="/blog">&larr; Return to index</Link>
+      <Button className='w-fit mx-auto mt-10' asChild><Link href='/blog'>Torna indietro</Link></Button>
     </section>
   );
 }

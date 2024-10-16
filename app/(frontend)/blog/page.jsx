@@ -26,9 +26,10 @@ const BlogPage = async () => {
 	return (
 		<section className="flex flex-col my-20 mx-10 lg:mx-20 2xl:mx-32">
 			<h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl mb-3 flex items-center"><GrArticle className="inline-block mr-2" />Blog</h1>
-			<div className="flex flex-col items-start justify-start gap-4 my-10">
-				<h2 className="font-semibold text-xl">Categorie</h2>
-				<ScrollArea className="flex gap-1 w-full whitespace-nowrap p-1 h-full">
+			<p className="max-w-xl">Questo è il mio blog, qui condivido articoli e tutorial su argomenti inerenti al mio lavoro e alla programmazione Web. Se hai dei consigli sentiti libero/a di contattarmi.</p>
+			<div className="flex flex-col items-start justify-start gap-4 my-16">
+				<h2 className="font-semibold text-2xl sm:text-3xl">Categorie</h2>
+				<ScrollArea className="flex gap-1 w-full whitespace-nowrap pb-[10px] h-full">
 					{categories.map((category) => {
 						return (
 							<Category id={category.id} slug={category.slug} title={category.title} />
@@ -37,22 +38,25 @@ const BlogPage = async () => {
 					<ScrollBar orientation='horizontal' />
 				</ScrollArea>
 			</div>
-			<div className="flex flex-col md:grid md:grid-cols-2 xl:grid xl:grid-cols-3 my-20 gap-10">
-				{posts.map((post) => {
-					return (
-						<PostCard 
-							slug={post.slug.current} 
-							title={post.title}
-							image={post.image}
-							altText={post.altText} 
-							description={post.description}
-							id={post.id}
-							categories={post.categories}
-							readTime={post.readTime}
-							date={post._updatedAt}
-						/>
-					)
-				})}
+			<div className="my-20">
+				<h2 className="font-semibold text-2xl sm:text-3xl mb-5">Tutti gli articoli</h2>
+				<div className="flex flex-col md:grid md:grid-cols-2 xl:grid xl:grid-cols-3  gap-10">
+					{posts.map((post) => {
+						return (
+							<PostCard 
+								slug={post.slug.current} 
+								title={post.title}
+								image={post.image}
+								altText={post.altText} 
+								description={post.description}
+								id={post.id}
+								categories={post.categories}
+								readTime={post.readTime}
+								date={post._updatedAt}
+							/>
+						)
+					})}
+				</div>
 			</div>
 		</section>
 	);

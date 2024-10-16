@@ -38,6 +38,7 @@ const CategoryPage = async ({ params }) => {
     return (
       <section className="flex flex-col my-20 mx-10 lg:mx-20 2xl:mx-32">
         <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl mb-3 flex items-center">{categories.title}</h1>
+        <p className="max-w-xl">{categories.description}</p>
         <div className="flex flex-col md:grid md:grid-cols-2 xl:grid xl:grid-cols-3  my-20 gap-10">
           {categories.posts.length == 0 && (
             <div className="text-left h-[50vh]">Nessun post disponibile per questa Categoria</div>

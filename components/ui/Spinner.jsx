@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, CSSProperties } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import { SyncLoader } from "react-spinners";
 
 
 
@@ -9,10 +11,10 @@ function Spinner() {
 
   return (
     <div className="sweet-loading flex">
-      <ClipLoader
+      <SyncLoader
         color={color}
         loading={loading}
-        size={150}
+        size={20}
         aria-label="Loading Spinner"
         data-testid="loader"
       />
