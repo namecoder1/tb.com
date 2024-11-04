@@ -161,7 +161,7 @@ const AboutPage = async () => {
 								<h2 className="text-xl font-semibold">Softwares</h2>
 							</CardHeader>
 							<CardContent className='xl:grid xl:grid-cols-3 flex flex-col gap-y-6 xl:gap-y-0 gap-x-5'>
-								<Card className='border-none'>
+								<Card className='border-none shadow-none'>
 									<CardHeader className='px-0 pt-0 pb-3'>
 										<Image src={vsc} width={50} height={50} />
 										<h2 className="text-xl font-semibold">Visual Studio Code</h2>	
@@ -170,7 +170,7 @@ const AboutPage = async () => {
 										Il mio software preferito in assoluto. Completamente personalizzabile, supporta quasi tutti i linguaggi ed è veloce e utile in fase di debug.
 									</CardContent>
 								</Card>
-								<Card className='border-none'>
+								<Card className='border-none shadow-none'>
 									<CardHeader className='px-0 pt-0 pb-3'>
 										<Image src={illustrator} width={50} height={50} />
 										<h2 className="text-xl font-semibold">Adobe Illustrator</h2>
@@ -179,7 +179,7 @@ const AboutPage = async () => {
 										Come non amare Illustrator..se devo creare un logo o un'illustrazione faccio riferimento su di lui. È il più complesso tra i 3 software e devo ancora prenderci la mano.
 									</CardContent>
 								</Card>
-								<Card className='border-none'>
+								<Card className='border-none shadow-none'>
 									<CardHeader className='px-0 pt-0 pb-3'>
 										<Image src={figma} width={50} height={50} />
 										<h2 className="text-xl font-semibold">Figma</h2>

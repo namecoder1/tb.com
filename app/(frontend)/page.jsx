@@ -40,7 +40,7 @@ const HomePage = async () => {
 					<Image src={cardImage} width={100} height={100} alt="Tobia Bartolomei's Image" className='rounded-full w-auto h-auto' />
 					<h1 className='text-xl font-semibold'>Tobia Bartolomei</h1>
 					<h2 className='text-sm'>Junior Frontend Web Developer</h2>
-					<Link className='mt-2' target='_blank' href="https://wakatime.com/@018edc23-7885-44d3-8b1a-efd38be8a6f6"><img src="https://wakatime.com/badge/user/018edc23-7885-44d3-8b1a-efd38be8a6f6.svg" alt="Total time coded since Apr 14 2024" /></Link>
+					<Link className='mt-2' target='_blank' href="https://wakatime.com/@018edc23-7885-44d3-8b1a-efd38be8a6f6"><img src="https://wakatime.com/badge/user/018edc23-7885-44d3-8b1a-efd38be8a6f6.svg" alt="Total time coded since Apr 14 2024" width={180} height={37} /></Link>
 				</CardHeader>
 				<CardContent>
 					<ul className='flex mx-auto flex-col items-start justify-center text-sm'>

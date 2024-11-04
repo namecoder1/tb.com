@@ -1,11 +1,12 @@
+import { Button } from "@/components/ui/button";
 import PostCard from "@/components/ui/PostCard";
 import { client } from "@/sanity/lib/client";
 import { CATEGORIES_QUERY } from "@/sanity/lib/queries";
+import Link from "next/link";
 
 const options = { next: { revalidate: 60 } };
 
 export async function generateMetadata({ params }) {
-  console.log(params)
   const categories = await client.fetch(CATEGORIES_QUERY, { categorySlug: params.category });
   if (!categories) {
     return { title: 'Progetto Non Trovato' };
@@ -41,7 +42,7 @@ const CategoryPage = async ({ params }) => {
         <p className="max-w-xl">{categories.description}</p>
         <div className="flex flex-col md:grid md:grid-cols-2 xl:grid xl:grid-cols-3  my-20 gap-10">
           {categories.posts.length == 0 && (
-            <div className="text-left h-[50vh]">Nessun post disponibile per questa Categoria</div>
+            <div className="text-left h-[50vh]">Nessun post disponibile per questa categoria</div>
           )}
           {categories.posts.map((category) => (
             <PostCard 
@@ -57,6 +58,7 @@ const CategoryPage = async ({ params }) => {
             />
           ))}
         </div>
+        <Button className='mx-auto w-fit' asChild variant='outline'><Link href='/blog'>Torna indietro</Link></Button>
       </section>
     );
   } catch (error) {

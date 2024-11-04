@@ -15,7 +15,7 @@ const ProjectLinks = ({ githubUrl, url, }) => {
 		<TooltipProvider>
 			<Tooltip>
 				<TooltipTrigger asChild>
-					<Button size='icon' name="Github Repository" asChild><Link href={githubUrl} target={"_blank"}><FaGithub className="inline-block text-lg" /></Link></Button>									
+					<Button size='icon' name="Github Repository" asChild><Link href={githubUrl} target={"_blank"} aria-label="View Repository"><FaGithub className="inline-block text-lg" /></Link></Button>									
 				</TooltipTrigger>
 				<TooltipContent>
 					<p>View GitHub Repo</p>
@@ -25,7 +25,7 @@ const ProjectLinks = ({ githubUrl, url, }) => {
 		<TooltipProvider>
 			<Tooltip>
 				<TooltipTrigger asChild>
-					<Button size='icon' name="Site Url" asChild><Link href={url} target={"_blank"}><FaExternalLinkAlt className="inline-block text-lg" /></Link></Button>
+					<Button size='icon' name="Site Url" asChild><Link href={url} target={"_blank"} aria-label="View Live Site"><FaExternalLinkAlt className="inline-block text-lg" /></Link></Button>
 				</TooltipTrigger>
 				<TooltipContent>
 					<p>View Live Site</p>
