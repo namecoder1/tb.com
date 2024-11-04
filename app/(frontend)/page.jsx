@@ -20,7 +20,9 @@ import LatestPosts from "@/components/LatestPosts";
 import LatestProject from "@/components/LatestProject";
 
 export const metadata = {
-	title: 'Homepage | Tobia Bartolomei'
+	title: 'Homepage | Tobia Bartolomei',
+	description: 'Ciao, mi chiamo Tobia Bartolomei, sono un Junior Frontend Web Developer e questo è il mio Portfolio Personale.',
+
 }
 
 const HomePage = async () => {

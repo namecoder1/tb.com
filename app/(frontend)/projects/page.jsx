@@ -6,7 +6,7 @@ import { GrProjects } from "react-icons/gr";
 
 export const metadata = {
 	title: 'Projects',
-	description: 'QUesta è la pagina dove sono elencati tutti i progetti a cui ho preso parte, sia come sviluppatore principale che come aiuto esterno.',
+	description: 'Questa è la pagina dove sono elencati tutti i progetti a cui ho preso parte, sia come sviluppatore principale che come aiuto esterno.',
 	openGraph: {
     title: 'Projects',
     description: 'Questa è la pagina dove sono elencati tutti i progetti a cui ho preso parte, sia come sviluppatore principale che come aiuto esterno.',
